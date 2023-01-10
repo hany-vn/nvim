@@ -15,3 +15,5 @@ keymap.set('n', 'L', '$')
 
 keymap.set('n', '<c-h>', '10h')
 keymap.set('n', '<c-l>', '10l')
+keymap.set('n', '<c-d>', '10j')
+keymap.set('n', '<c-u>', '10k')
