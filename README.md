@@ -1,3 +1,7 @@
+#Support
+1. PHP
+2. JS
+
 # Installation
 1. Install Packer https://github.com/wbthomason/packer.nvim
 2. Run :PackerInstall on Neovim
