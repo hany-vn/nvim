@@ -11,3 +11,6 @@
 
 # Font
 1. Fira Code
+
+# Recommend
+1. Use "Kitty" terminal (Support fira ligature)
