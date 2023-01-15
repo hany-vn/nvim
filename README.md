@@ -1,4 +1,4 @@
-# Support
+# Language server
 1. PHP
 2. JS
 
