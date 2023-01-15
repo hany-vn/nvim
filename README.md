@@ -10,6 +10,4 @@
 5. Run :checkhealth on Neovim check and install dependent
 
 # Font
-1. Nerd
-2. Fira
-3. Cascadia
+1. Fira Code
