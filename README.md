@@ -17,6 +17,8 @@ Here is my Neovim setup source code, you can refer.
 	:CocInstall coc-tsserver coc-json coc-svelte @yaegassy/coc-intelephense
 	:checkhealth
 
+# Font
+* Fira Code font
+
 # Tools
 * Kitty terminal
-* Fira Code font
