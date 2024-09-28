@@ -52,3 +52,5 @@ opt.timeoutlen = 500
 vim.cmd [[
     highlight Normal guibg=NONE ctermbg=NONE
 ]]
+
+vim.notify = function() end -- Overwrite function to turn off all errors (codeium)

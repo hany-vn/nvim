@@ -5,7 +5,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 local on_attach = function(_, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', bufopts)
-  vim.keymap.set('n', '<leader>i', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, bufopts)
 
   -- Format on save
@@ -63,9 +62,12 @@ require('mason-lspconfig').setup_handlers({
   ts_ls = function()
     require 'lspconfig'.ts_ls.setup(vim.tbl_extend('force', lsp_config, {
       filetypes = {
-        "html",
         "javascript",
+        "javascriptreact",
+        "javascript.jsx",
         "typescript",
+        "typescriptreact",
+        "typescript.tsx"
       },
       on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true }

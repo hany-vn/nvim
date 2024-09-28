@@ -19,6 +19,7 @@ cmp.setup({
       end
     },
     { name = 'luasnip' }, -- For luasnip users.
+    { name = 'codeium' }
   }, {
     { name = 'buffer' },
   }),
@@ -65,4 +66,3 @@ vim.cmd([[
 set completeopt=menuone,noinsert,noselect
 highlight! default link CmpItemKind CmpItemMenuDefault
 ]])
-
