@@ -51,7 +51,28 @@ require('mason-lspconfig').setup_handlers({
             enable = false,
           }
         }
-      }
+      },
+      on_attach = function(client, bufnr)
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', ':!cargo run<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':!cargo build<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>c', ':!cargo check<CR>', opts)
+      end
+    }))
+  end,
+  ts_ls = function()
+    require 'lspconfig'.ts_ls.setup(vim.tbl_extend('force', lsp_config, {
+      filetypes = {
+        "html",
+        "javascript",
+        "typescript",
+      },
+      on_attach = function(client, bufnr)
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', ':!npm start<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':!npm build<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>c', ':!npm test<CR>', opts)
+      end
     }))
   end
 })

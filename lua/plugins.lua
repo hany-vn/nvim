@@ -60,11 +60,6 @@ return require('packer').startup(function(use)
   use 'folke/todo-comments.nvim'
   use 'numToStr/Comment.nvim'
 
-  -- Other
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end }
-
   -- Coc
   use { 'neoclide/coc.nvim', branch = 'release' }
 end)
