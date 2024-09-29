@@ -67,7 +67,9 @@ require('mason-lspconfig').setup_handlers({
         "javascript.jsx",
         "typescript",
         "typescriptreact",
-        "typescript.tsx"
+        "typescript.tsx",
+        "html",
+        "json"
       },
       on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true }

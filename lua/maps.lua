@@ -18,4 +18,4 @@ keymap.set('n', 'f', '<C-w>w')
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
 
 -- Terminal
-vim.api.nvim_set_keymap('n', '<leader>t', ':!', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>FineCmdline<CR>!', { noremap = true })

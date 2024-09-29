@@ -71,8 +71,14 @@ return require('packer').startup(function(use)
       "hrsh7th/nvim-cmp",
     },
     config = function()
-      require("codeium").setup({
-      })
+      require("codeium").setup({})
     end
+  }                             -- Codeium AI
+  use 'lewis6991/gitsigns.nvim' -- Git
+  use {
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      { 'MunifTanjim/nui.nvim' }
+    }
   }
 end)
