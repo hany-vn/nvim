@@ -16,3 +16,6 @@ keymap.set('n', 'f', '<C-w>w')
 
 -- Save
 vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })
+
+-- Terminal
+vim.api.nvim_set_keymap('n', '<leader>t', ':!', { noremap = true })

@@ -71,10 +71,13 @@ require('mason-lspconfig').setup_handlers({
       },
       on_attach = function(client, bufnr)
         local opts = { noremap = true, silent = true }
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', ':!npm start<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':!npm build<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>c', ':!npm test<CR>', opts)
+        local project_root = client.config.root_dir
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', ':!cd ' .. project_root .. ' && npm start<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', ':!cd ' .. project_root .. ' && npm run build<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>c', ':!cd ' .. project_root .. ' && npm run test<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>l', ':!cd ' .. project_root .. ' && npm run dev<CR>', opts)
       end
+
     }))
   end
 })
