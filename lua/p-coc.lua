@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 
 vim.api.nvim_create_autocmd("FileType", {
   group = "CocGroup",
-  pattern = "typescript,json",
+  pattern = "typescript,json,php,rust",
   command = "setl formatexpr=CocAction('formatSelected')",
   desc = "Setup formatexpr specified filetype(s)."
 })

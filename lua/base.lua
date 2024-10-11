@@ -48,12 +48,15 @@ opt.whichwrap = 'h,l'
 opt.updatetime = 300
 opt.timeoutlen = 500
 
--- Background transformer
-vim.cmd [[
-    highlight Normal guibg=NONE ctermbg=NONE
-]]
-
-vim.notify = function() end                                                   -- Overwrite function to turn off all errors (codeium)
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true }) -- CMD
 vim.api.nvim_set_keymap('n', '<C-/>', 'I--<Esc>', { noremap = true })
-vim.cmd("hi FloatBorder guibg=NONE guifg=#C0C0C0")                            -- Disable border cmd
+
+-- block comment when new line
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove("c")
+    vim.opt_local.formatoptions:remove("r")
+    vim.opt_local.formatoptions:remove("o")
+  end,
+})

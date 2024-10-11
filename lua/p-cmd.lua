@@ -2,22 +2,24 @@ require('fine-cmdline').setup({
   cmdline = {
     enable_keymaps = true,
     smart_history = true,
-    prompt = ' ➞ '
+    prompt = ' 🐰 '
   },
   popup = {
     position = {
-      row = '10%',
+      row = '15%',
       col = '50%',
     },
+    relative = "editor",
     size = {
       width = '60%',
     },
     border = {
       style = 'rounded',
-      highlight = 'Normal'
+      padding = { 0, 2 },
     },
     win_options = {
-      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+      -- winblend = 20,
+      winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
   },
   hooks = {
@@ -32,3 +34,4 @@ require('fine-cmdline').setup({
     end
   }
 })
+vim.cmd("hi FloatBorder guibg=NONE guifg=NONE") -- Disable border cmd

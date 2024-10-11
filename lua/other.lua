@@ -66,9 +66,26 @@ require('gitsigns').setup {
     map('n', '<leader>hd', function() gitsigns.diffthis('~') end)
     vim.api.nvim_set_keymap(
       'n',
-      '<leader>H',
+      '<leader>h',
       '<C-w>h:q<CR>', -- Chuyển sang cửa sổ bên trái và thoát cửa sổ hiện tại
       { noremap = true, silent = true }
     )
   end
 }
+
+require('beacon').setup({
+  enable = true,
+  size = 40,
+  fade = true,
+  minimal_jump = 2,
+  show_jumps = true,
+  focus_gained = true,
+  shrink = true,
+  timeout = 1000,
+  ignore_buffers = {},
+  ignore_filetypes = {},
+})
+
+require("supermaven-nvim").setup({
+  -- config supermaven-nvim
+})

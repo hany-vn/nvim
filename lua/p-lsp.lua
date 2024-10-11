@@ -26,6 +26,7 @@ local lsp_config = {
     on_attach(_, bufnr)
   end
 }
+local root_pattern = require('lspconfig').util.root_pattern
 
 require('mason-lspconfig').setup_handlers({
   function(server_name)
@@ -80,6 +81,27 @@ require('mason-lspconfig').setup_handlers({
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>l', ':!cd ' .. project_root .. ' && npm run dev<CR>', opts)
       end
 
+    }))
+  end,
+  phpactor = function()
+    require 'lspconfig'.phpactor.setup(vim.tbl_extend('force', lsp_config, {
+      cmd = { "phpactor", "language-server" }, -- Đảm bảo rằng bạn có phpactor được cài đặt
+      filetypes = { "php" },
+      root_dir = lsp_config.util.root_pattern("composer.json", ".git"),
+    }))
+  end,
+  intelephense = function()
+    require 'lspconfig'.intelephense.setup(vim.tbl_extend('force', lsp_config, {
+      cmd = { "intelephense", "--stdio" },
+      filetypes = { "php" },
+      root_dir = root_pattern("composer.json", ".git"),
+      settings = {
+        intelephense = {
+          files = {
+            include = { "**/*.php" },
+          },
+        },
+      }
     }))
   end
 })

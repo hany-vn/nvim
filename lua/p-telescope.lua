@@ -10,6 +10,8 @@ require('nvim-web-devicons').setup({
 })
 require('telescope').setup {
   defaults = {
+    prompt_prefix = " 🔍 ", -- Thay đổi icon của prompt (mặc định là ">")
+    selection_caret = " 👉 ", -- Thay đổi icon của caret khi chọn mục (mặc định là ">")
     path_display = { 'smart' },
     mappings = {
       i = {
@@ -22,7 +24,7 @@ require('telescope').setup {
   layout_config = {
     horizontal = {
       preview_cutoff = 100,
-      preview_width = 0.6
+      preview_width = 0.6,
     }
   }
 }

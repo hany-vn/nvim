@@ -20,9 +20,6 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Theme
-  use 'drewtempelmeyer/palenight.vim' -- Color
-
   -- Text
   use 'rmagatti/alternate-toggler'
   use 'windwp/nvim-autopairs'
@@ -64,21 +61,22 @@ return require('packer').startup(function(use)
   use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- Other
-  use {
-    "Exafunction/codeium.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({})
-    end
-  }                             -- Codeium AI
   use 'lewis6991/gitsigns.nvim' -- Git
   use {
     'VonHeikemen/fine-cmdline.nvim',
     requires = {
       { 'MunifTanjim/nui.nvim' }
     }
+  }                                  -- CMD
+  use { 'rainbowhxch/beacon.nvim' }  -- Cursor
+  use 'phpactor/phpactor'            -- phpactor
+
+  use 'wilmanbarrios/palenight.nvim' -- color
+
+  use {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
   }
 end)
