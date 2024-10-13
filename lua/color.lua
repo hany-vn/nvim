@@ -4,6 +4,7 @@ vim.cmd('colorscheme palenight')
 vim.cmd [[
     highlight Normal guibg=NONE ctermbg=NONE
 ]]
+vim.cmd([[highlight SignColumn guibg=NONE]])
 
 vim.cmd([[
   hi TelescopeNormal guibg=NONE
